@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+width: 100vw;
+height: 100vh;
+background-color: #102626;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.wrapper{
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    -webkit-box-reflect: below 1px linear-gradient( #0001, #0004);
+}
+.container{
+width: 400px;
+height: 400px;
+background-color: #0d2323;
+border-radius: 50%;
+position: relative;
+animation-name: circle;
+animation-timing-function: linear;
+animation-duration: 2s;
+animation-iteration-count: infinite;
+
+}
+.container::before{
+    content: "";
+    width: 50%;
+    height: 100%;
+    background-image: linear-gradient(to top, transparent, rgba(0, 255, 251, 0.329));
+position: absolute;
+border-top-left-radius: 200px;
+border-bottom-left-radius: 200px;
+}
+.container::after{
+    content: "";
+    width: 320px;
+    height: 320px;
+    position: absolute;
+    background-color: #0d2323;
+    border-radius: 50%;
+    top: 40px;
+    left: 40px;
+}
+.box {
+width: 40px;
+height: 40px;
+background-color: aqua;
+border-radius: 50%;
+position: relative;
+top: 0;
+left: 50%;
+transform: translateX(-50%);
+box-shadow: 0 0px 10px aqua,
+ 0 0px 20px aqua,
+ 0 0px 30px aqua,
+ 0 0px 40px aqua,
+ 0 0px 50px aqua,
+ 0 0px 60px aqua;
+ z-index: 100;
+}
+@keyframes circle {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
